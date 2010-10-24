@@ -11,4 +11,20 @@
 
 "use strict";
 Grafico.ParallelCoordinatesGraph = Class.create(Grafico.BaseGraph, {
+  /* if this is not defined, this class will fail. This is undocumented; the requirements
+   * of chartDefaults, drawPlot, and calculateStep are semi-documented.
+   * TODO: fix. */
+  setChartSpecificOptions: function () {}
+  chartDefaults: function () {}
+  drawPlot: function (index, cursor, x, y, color, coords, datalabel, element, graphindex) {}
+  calculateStep: function () {
+    /* XXX: right now this is copied from line.js */
+    return (this.graph_width - (this.options.plot_padding * 2)) / (this.data_size - 1);
+  },
 });
+
+/* Implementing a new graph type NOTES:
+ *
+ * o You must override: setChartSpecificOptions, chartDefaults, drawPlot, and calculateStep
+ * o calculateStep: 
+ */

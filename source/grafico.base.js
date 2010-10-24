@@ -21,7 +21,8 @@ var Grafico = {
   StackedBarGraph: {},
   HorizontalBarGraph: {},
   SparkLine: {},
-  SparkBar: {}
+  SparkBar: {},
+  ParallelCoordinatesGraph: {}
 };
 
 Grafico.Base = Class.create({
